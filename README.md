@@ -1,37 +1,57 @@
 ## Для чего?
-Пакет для проверки параметров запуска VK Mini Apps. Код взят из официальной [документации](https://vk.com/dev/vk_apps_launch_params?f=%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%2B%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8%2B%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B8%2B%D0%BD%D0%B0%2BNode.js) и собран в один пакет для удобства использования.
+
+Пакет для проверки параметров запуска Telegram Web Apps. Код взят из официальной [документации](https://core.telegram.org/bots/webapps#validating-data-received-via-the-web-app) и собран в один пакет для удобства использования.
 
 ### Начало работы с пакетом
+
 Для начала установите пакет:
+
 ```
-npm i vkminiapps-params-checker
+npm i tgwa-params-checker
 ```
+
 Проинициализируйте его в своём проекте:
+
 ```javascript
-const check = require('vkminiapps-params-checker');
+const check = require("tgwa-params-checker");
 ```
+
 Использование:
+
 ```javascript
-const isValidParams = check('параметры запуска', 'секретный ключ приложения', 'время жизни в секундах');
+const isValidParams = check(
+  "параметры запуска",
+  "секретный ключ бота",
+  "время жизни в секундах"
+);
 ```
+
 Функция возвращает `true` или `false`.
 
 ### Время жизни параметров
-При каждой генерации параметров к ним прикрепляется дата создания: **vk_ts**.   
 
-Изначально параметры запуска будут ***"жить"*** два часа - **7200 секунд**. И Вы
+При каждой генерации параметров к ним прикрепляется дата создания: **auth_date**.
+
+Изначально параметры запуска будут **_"жить"_** два часа - **7200 секунд**. И Вы
 можете изменить это значения, передав нужное число.
 
-В примере выше мы прокидываем **параметры запуска**, **секретный ключ приложения**, а также ***время жизни***. В качестве последнего Вы можете прокинуть как число, так и **0**.
+В примере выше мы прокидываем **параметры запуска**, **секретный ключ приложения**, а также **_время жизни_**. В качестве последнего Вы можете прокинуть как число, так и **0**.
 
 Если указано 0, то проверка на "**протухшесть**" параметров запука будет отключена.
+
 ```javascript
-const isValidParams = check('', '', 3600) // Параметры запуска будут жить час (3600 секунд)
-````
+const isValidParams = check("", "", 3600); // Параметры запуска будут жить час (3600 секунд)
+```
+
 ```javascript
-const isValidParams = check('', '', 0) // Параметры запуска будут жить вечно, пока не изменится, например, ключ от приложения.
-````
+const isValidParams = check("", "", 0); // Параметры запуска будут жить вечно, пока не изменится, например, ключ от приложения.
+```
+
 ### Пример:
+
 ```javascript
-const isValidParams = check('vk_access_token_settings=&vk_app_id=7948530&vk_are_notifications_enabled=0&vk_is_app_user=1&vk_is_favorite=0&vk_language=ru&vk_platform=desktop_web&vk_ref=other&vk_ts=1634454189&vk_user_id=172118960&sign=5lVUWU19M_xQpENllCGe2Mi-SGWC8K5i7FdkfHOwggA', 'cBpgoP3d9WggrQ81qtNhw'); // false
+const isValidParams = check(
+  "query_id=AAHhpGQWAAAAAOGkZBacHiQ6&user=%7B%22id%22%3A375694561%2C%22first_name%22%3A%22%D0%9D%D0%98%D0%9A%D0%98%D0%A2%D0%90%22%2C%22last_name%22%3A%22%D0%9A%D0%9E%D0%9A%D0%90%22%2C%22username%22%3A%22lukasandreano%22%2C%22language_code%22%3A%22en%22%2C%22is_premium%22%3Atrue%7D&auth_date=1679551046&hash=36e589beaeb21328f4bcbec1816b8aba595f2612a28ea9beed696c2e9d85ecf3",
+  "TdpgoP3d9Wggrfs1qtNhw"
+); // false
 ```

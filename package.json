@@ -1,6 +1,6 @@
 {
   "name": "tgwa-params-checker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Функция для проверка параметров запуска Telegram Web App, использующая код из официальной документации Telegram.",
   "main": "index.js",
   "repository": "github:LukasAndreano/vkminiapps-params-checker",
