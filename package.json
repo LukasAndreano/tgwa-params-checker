@@ -1,0 +1,24 @@
+{
+  "name": "tgwa-params-checker",
+  "version": "1.0.0",
+  "description": "Функция для проверка параметров запуска Telegram Web App, использующая код из официальной документации Telegram.",
+  "main": "index.js",
+  "repository": "github:LukasAndreano/vkminiapps-params-checker",
+  "homepage": "https://github.com/LukasAndreano/tgwa-params-checker",
+  "bugs": "https://github.com/LukasAndreano/tgwa-params-checker/issues",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "telegram web app",
+    "tgwa",
+    "telegram auth checker",
+    "telegram web app nodejs",
+    "tgwa params checker"
+  ],
+  "author": "Nikita Balin <n.balin@koka.team> (https://koka.team)",
+  "license": "MIT",
+  "dependencies": {
+    "crypto": "latest"
+  }
+}
