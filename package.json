@@ -1,0 +1,32 @@
+{
+  "name": "tgwa-params-checker",
+  "version": "1.0.4",
+  "description": "A function for checking Telegram Web App startup settings, using code from official Telegram documentation.",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "github:LukasAndreano/vkminiapps-params-checker",
+  "homepage": "https://github.com/LukasAndreano/tgwa-params-checker",
+  "bugs": "https://github.com/LukasAndreano/tgwa-params-checker/issues",
+  "keywords": [
+    "telegram web app",
+    "tgwa",
+    "telegram auth checker",
+    "telegram web app nodejs",
+    "tgwa params checker"
+  ],
+  "author": "Nikita Balin <n.balin@koka.team> (https://koka.team)",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "npm run prettify && tsc --build --clean && tsc",
+    "prettify": "prettier --write .",
+    "release": "npm run build && cp package.json dist && cp README.md dist && npm publish ./dist"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1"
+  }
+}
