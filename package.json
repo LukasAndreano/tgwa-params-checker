@@ -1,6 +1,6 @@
 {
 	"name": "tgwa-params-checker",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "A function for checking Telegram Web App startup settings, using code from official Telegram documentation.",
 	"license": "MIT",
 	"main": "index.js",
@@ -16,7 +16,8 @@
 		"url": "git+https://github.com/LukasAndreano/tgwa-params-checker.git"
 	},
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com"
+		"registry": "https://npm.pkg.github.com",
+		"access": "public"
 	},
 	"homepage": "https://github.com/LukasAndreano/tgwa-params-checker",
 	"bugs": "https://github.com/LukasAndreano/tgwa-params-checker/issues",
