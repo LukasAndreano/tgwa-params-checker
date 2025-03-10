@@ -1,8 +1,0 @@
-# Ignore artifacts:
-dist
-coverage
-yarn.lock
-yarn-error.log
-package.json
-tsconfig.json
-node_modules
