@@ -15,6 +15,9 @@
 		"directory": ".",
 		"url": "git+https://github.com/LukasAndreano/tgwa-params-checker.git"
 	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
 	"homepage": "https://github.com/LukasAndreano/tgwa-params-checker",
 	"bugs": "https://github.com/LukasAndreano/tgwa-params-checker/issues",
 	"keywords": [
